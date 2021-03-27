@@ -19,11 +19,11 @@ Route::get('/', function () {
 
 
 
-Route::get('/transactioninfo/submitinfo','TransactionInfoController@submitinfo')->name('submitinfo');
+Route::get('/transactioninfo/submitinfo', [App\Http\Controllers\TransactionInfoController::class, 'submitinfo'])->name('submitinfo');
 
 
 
-Route::post('/transactioninfo/submitinfo', 'TransactionInfoController@addinfo')->name('addinfo');
+Route::post('/transactioninfo/submitinfo', [App\Http\Controllers\TransactionInfoController::class, 'addinfo'])->name('addinfo');
 
 
 Auth::routes();
