@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransinfoTable extends Migration
+class CreateTransactionInfosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateTransinfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('Transinfo', function (Blueprint $table) {
+        Schema::create('transaction_infos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nationalId')->unique();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('phoneNUMBER')->unique();
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->string('phoneNumber')->unique();
             $table->text('address')->unique();
-            $table->date('BirthDate');
+            $table->date('birthDate');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateTransinfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Transinfo');
+        Schema::dropIfExists('TransactionInfo');
     }
 }
